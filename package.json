@@ -1,0 +1,20 @@
+{
+  "name": "KommiBotRewrite",
+  "version": "7.0.1",
+  "description": "A basic chat bot for discord",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "discord.js": "^11.5.1",
+    "fs-readdir-recursive": "^1.1.0",
+    "enmap": "^5.1.0",
+    "better-sqlite3": "^5.4.2"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "license": "MIT"
+}

@@ -7,6 +7,7 @@ module.exports.description = "Removes the given Prefix from my prefixes.";
 module.exports.args = ["<prefix>"];
 module.exports.usage = pre => {return `\`${pre}removeprefix c!\``;};
 module.exports.reload = true;
+module.exports.sui = true;
 
 
 module.exports.ex = async (message, args, client) => {
@@ -23,7 +24,7 @@ module.exports.ex = async (message, args, client) => {
   }
 
   var newpres = [];
-  for (pre of pres) {
+  for (var pre of pres) {
     if(pre != prefix) {
       console.log(pre, "didn't delete")
       newpres.push(pre);

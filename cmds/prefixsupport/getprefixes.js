@@ -4,6 +4,7 @@ module.exports.name = "getprefixes";
 module.exports.alias = ["prefix", "prefixes", "getprefix"];
 module.exports.description = "Sends a List of all my current Prefixes.";
 module.exports.usage = pre => {return `\`${pre}getprefix\` \n \`${pre}prefixes\``};
+module.exports.sui = true;
 
 
 module.exports.ex = async (message, args, client) => {
@@ -12,7 +13,7 @@ module.exports.ex = async (message, args, client) => {
   var embed = new discord.RichEmbed();
   embed.setTitle("All my Prefixes:");
   embed.setColor("BLACK");
-  for (pre of pres) {
+  for (var pre of pres) {
     embed.addField(pre, "One of 'em");
   }
   message.channel.send(embed);

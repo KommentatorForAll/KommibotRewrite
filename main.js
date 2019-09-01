@@ -3,6 +3,7 @@ const fs = require("fs");
 const readrec = require("fs-readdir-recursive");
 const setup = require("./setup.js");
 const client = new discord.Client();
+const enmap = require("enmap");
 var apk;
 var apkowner;
 var debugchannel;
@@ -19,7 +20,7 @@ readrec("./cmds").filter(file => file.endsWith(".js")).forEach(scr => {
     cmd.alias.forEach(ali => cmds[ali] = cmd);
   }
 });
-
+console.log(cmds);
 //Ready function
 client.once("ready", async () => {
   client.cmds = cmds;
@@ -75,7 +76,7 @@ client.on("message", async message => {
 
   var iscmd = false;
   var prelen = 0;
-  for (pre of pres) {
+  for (var pre of pres) {
     if (content.startsWith(pre)) {
       iscmd = true;
       prelen = pre.length;
@@ -108,7 +109,7 @@ client.on("message", async message => {
     }
     catch (err) {
       console.log(err);
-      embed = new discord.RichEmbed();
+      var embed = new discord.RichEmbed();
       embed.setTitle("Error while executing following cmd:");
       embed.setDescription(err);
       embed.addField(content);
@@ -123,4 +124,4 @@ client.on("message", async message => {
 
 
 
-client.login("No Token");
+client.login(process.env.TOKEN);

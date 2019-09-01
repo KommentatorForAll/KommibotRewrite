@@ -5,8 +5,8 @@ module.exports.perm = "MANAGE_GUILD";
 module.exports.description = "Adds the given Prefix to my prefixes.";
 module.exports.args = ["<prefix>"];
 module.exports.usage = pre => {return `\`${pre}addprefix c!\``;};
-module.exports.reload = true
-
+module.exports.reload = true;
+module.exports.sui = true;
 
 module.exports.ex = async (message, args, client) => {
   try {
