@@ -123,4 +123,4 @@ client.on("message", async message => {
 
 
 
-client.login("NTY4OTE0MTc4OTMzMjYwMzYw.XMViVA.sEKGTmH__XFV6k0r6FcYXXl3txA");
+client.login("No Token");
